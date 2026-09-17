@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    
+    
+    
+    <meta name="generator" content="placeholder.cool">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Coming Soon">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #1a1a2e;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+        
+            body {
+                background: #1a1a2e !important;
+            }
+        .placeholder-preview {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            max-width: 200px;
+            max-height: 150px;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+        .placeholder-preview h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            
+        }
+        .placeholder-preview p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        .contact-section {
+            margin-top: 40px;
+            animation: fadeIn 1s ease 0.6s both;
+        }
+        .contact-section a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .contact-section a:hover {
+            opacity: 1;
+        }
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            color: inherit;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid currentColor;
+            border-radius: 4px;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+        .social-links a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        .footer a:hover {
+            opacity: 1;
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #1a1a2e;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .modal-close:hover {
+            opacity: 1;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .placeholder-preview h1 {
+                font-size: 2em;
+            }
+            .logo {
+                max-width: 150px;
+                max-height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="placeholder-preview">
+        
+        <h1>Coming Soon</h1>
+        <p>This website is under construction. Check back soon!</p>
+        
+        
+    </div>
+    
+    <script>
+        // Email obfuscation
+        document.querySelectorAll('.obfuscated-email').forEach(function(el) {
+            var user = el.getAttribute('data-user');
+            var domain = el.getAttribute('data-domain');
+            if (user && domain) {
+                var email = user + '@' + domain;
+                el.href = 'mailto:' + email;
+                el.textContent = email;
+            }
+        });
+        
+        // Modal handling with event delegation
+        document.addEventListener('click', function(e) {
+            // Open modal
+            if (e.target.classList.contains('modal-link')) {
+                e.preventDefault();
+                var modalId = e.target.getAttribute('data-modal');
+                if (modalId) {
+                    document.getElementById(modalId).classList.add('active');
+                }
+            }
+            
+            // Close modal
+            if (e.target.classList.contains('modal-close')) {
+                var modalId = e.target.getAttribute('data-modal');
+                if (modalId) {
+                    document.getElementById(modalId).classList.remove('active');
+                }
+            }
+            
+            // Close modal on background click
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
